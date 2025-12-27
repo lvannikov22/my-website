@@ -1,0 +1,334 @@
+body {
+  font-family: 'Mountains of Christmas', cursive;
+  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  max-width: 90%;
+  width: 420px;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  text-align: center;
+  position: relative;
+}
+
+.screen h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.screen p {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+input {
+  display: block;
+  width: 90%;
+  padding: 12px;
+  margin: 12px auto;
+  border: 2px solid #f8f9fa;
+  border-radius: 12px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #d90429, #f72585);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f72585, #d90429);
+}
+
+#musicToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-family: 'Mountains of Christmas', cursive;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  color: #fff;
+  font-size: 1.5em;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  user-select: none;
+  animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; font-size: 1.2em; opacity: 0.9; }
+.snowflake:nth-child(2) { left: 20%; animation-duration: 12s; font-size: 1.8em; opacity: 0.7; }
+.snowflake:nth-child(3) { left: 30%; animation-duration: 8s;  font-size: 1.4em; opacity: 0.85; }
+.snowflake:nth-child(4) { left: 40%; animation-duration: 11s; font-size: 1.1em; opacity: 0.8; }
+.snowflake:nth-child(5) { left: 50%; animation-duration: 9s;  font-size: 1.6em; opacity: 0.75; }
+.snowflake:nth-child(6) { left: 60%; animation-duration: 13s; font-size: 1.3em; opacity: 0.9; }
+.snowflake:nth-child(7) { left: 70%; animation-duration: 10s; font-size: 1.5em; opacity: 0.8; }
+.snowflake:nth-child(8) { left: 80%; animation-duration: 12s; font-size: 1.2em; opacity: 0.85; }
+.snowflake:nth-child(9) { left: 90%; animation-duration: 9s;  font-size: 1.7em; opacity: 0.7; }
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* === ЁЛКА === */
+#tree-container {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  z-index: 2;
+  transform: scale(0.8);
+}
+
+.tree {
+  position: relative;
+  width: 100px;
+}
+
+.branch {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  position: absolute;
+  left: -40px;
+  background: none;
+}
+
+.branch-top {
+  border-bottom: 60px solid #2e8b57;
+  top: 0;
+}
+
+.branch-middle {
+  border-bottom: 70px solid #228B22;
+  top: 45px;
+}
+
+.branch-bottom {
+  border-bottom: 80px solid #006400;
+  top: 100px;
+}
+
+.trunk {
+  width: 20px;
+  height: 30px;
+  background: #8B4513;
+  position: absolute;
+  top: 175px;
+  left: -10px;
+  border-radius: 3px;
+}
+
+.star {
+  position: absolute;
+  top: -28px;
+  left: -12px;
+  font-size: 28px;
+  color: gold;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+  animation: pulseStar 2s infinite alternate;
+  z-index: 5;
+}
+
+@keyframes pulseStar {
+  from { transform: scale(1); opacity: 0.9; }
+  to { transform: scale(1.2); opacity: 1; }
+}
+
+/* Огоньки */
+.light {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+.light-1 { top: 30px; left: -30px; animation-delay: 0s; background: #ff5252; color: #ff5252; }
+.light-2 { top: 50px; left: 20px;  animation-delay: 0.3s; background: #4caf50; color: #4caf50; }
+.light-3 { top: 80px; left: -25px; animation-delay: 0.6s; background: #2196f3; color: #2196f3; }
+.light-4 { top: 100px; left: 25px; animation-delay: 0.9s; background: #ffeb3b; color: #ffeb3b; }
+.light-5 { top: 130px; left: -20px; animation-delay: 1.2s; background: #9c27b0; color: #9c27b0; }
+.light-6 { top: 150px; left: 30px; animation-delay: 1.5s; background: #ff9800; color: #ff9800; }
+.light-7 { top: 60px; left: -10px; animation-delay: 0.4s; background: #00bcd4; color: #00bcd4; }
+.light-8 { top: 120px; left: 10px; animation-delay: 1.1s; background: #e91e63; color: #e91e63; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 8px currentColor; }
+}
+
+/* === Подарки === */
+.gifts {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.gift {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.gift::before,
+.gift::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+}
+
+.gift::before {
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.gift::after {
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+}
+
+.gift-1 { background: #e91e63; }
+.gift-2 { background: #2196f3; }
+.gift-3 { background: #4caf50; }
+
+.gift-1::after { background: #e91e63; }
+.gift-2::after { background: #2196f3; }
+.gift-3::after { background: #4caf50; }
+
+/* === Дым от камина === */
+.fireplace-smoke {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1;
+}
+
+.smoke {
+  width: 30px;
+  height: 30px;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: riseSmoke 8s infinite ease-in;
+}
+
+.smoke:nth-child(1) {
+  animation-delay: 0s;
+  width: 20px;
+  height: 20px;
+  background: rgba(220, 220, 220, 0.15);
+}
+
+.smoke:nth-child(2) {
+  animation-delay: 2s;
+  width: 26px;
+  height: 26px;
+  background: rgba(210, 210, 210, 0.2);
+}
+
+.smoke:nth-child(3) {
+  animation-delay: 4s;
+  width: 32px;
+  height: 32px;
+  background: rgba(190, 190, 190, 0.25);
+}
+
+@keyframes riseSmoke {
+  0% {
+    bottom: 0;
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* Адаптация */
+@media (max-width: 600px) {
+  #tree-container {
+    display: none;
+  }
+  .fireplace-smoke {
+    display: none;
+  }
+  .gifts {
+    gap: 8px;
+  }
+  .gift {
+    width: 32px;
+    height: 24px;
+  }
+    }
