@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Новогодние пожелания</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Фоновая музыка -->
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/01/19/audio_8a21d6d3b9.mp3?filename=christmas-music-box-melody-120883.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicToggle" onclick="toggleMusic()">🔊 Вкл. музыку</button>
+
+  <!-- Снег -->
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+  </div>
+
+  <!-- Ёлка -->
+  <div id="tree-container">
+    <div class="tree">
+      <div class="branch branch-top"></div>
+      <div class="star">★</div>
+      <div class="branch branch-middle"></div>
+      <div class="branch branch-bottom"></div>
+      <div class="trunk"></div>
+      <!-- Огоньки -->
+      <div class="light light-1"></div>
+      <div class="light light-2"></div>
+      <div class="light light-3"></div>
+      <div class="light light-4"></div>
+      <div class="light light-5"></div>
+      <div class="light light-6"></div>
+      <div class="light light-7"></div>
+      <div class="light light-8"></div>
+    </div>
+    <!-- Подарки -->
+    <div class="gifts">
+      <div class="gift gift-1"></div>
+      <div class="gift gift-2"></div>
+      <div class="gift gift-3"></div>
+    </div>
+  </div>
+
+  <!-- Дым от камина -->
+  <div class="fireplace-smoke">
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+  </div>
+
+  <!-- Экран ввода -->
+  <div id="input-screen" class="screen">
+    <h1>С Новым Годом! 🎅</h1>
+    <p>Напишите своё имя и отчество, чтобы получить персональные пожелания:</p>
+    <input type="text" id="firstName" placeholder="Имя" />
+    <input type="text" id="patronymic" placeholder="Отчество" />
+    <button onclick="showWishes()">Получить пожелания</button>
+  </div>
+
+  <!-- Экран с пожеланиями -->
+  <div id="wishes-screen" class="screen" style="display: none;">
+    <h1><span id="userName"></span>!</h1>
+    <p id="wishesText"></p>
+    <button onclick="restart()">Назад</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
